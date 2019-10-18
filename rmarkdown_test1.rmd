@@ -2,7 +2,9 @@
 title: "R Markdown test1"
 author: "Atoj"
 date: "18/10/2019"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
