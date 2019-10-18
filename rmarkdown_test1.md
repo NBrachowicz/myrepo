@@ -8,32 +8,46 @@ output:
 ---
 
 
+```r
+library(tidyverse)
+```
 
-## R Markdown
+```
+## -- Attaching packages --------------------------------------------------------- tidyverse 1.2.1 --
+```
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```
+## v ggplot2 3.2.1     v purrr   0.3.2
+## v tibble  2.1.3     v dplyr   0.8.3
+## v tidyr   1.0.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.4.0
+```
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
+```
+## -- Conflicts ------------------------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
 
 ```r
-summary(cars)
+head(diamonds, 5)
 ```
 
 ```
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
+## # A tibble: 5 x 10
+##   carat cut     color clarity depth table price     x     y     z
+##   <dbl> <ord>   <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
+## 1 0.23  Ideal   E     SI2      61.5    55   326  3.95  3.98  2.43
+## 2 0.21  Premium E     SI1      59.8    61   326  3.89  3.84  2.31
+## 3 0.23  Good    E     VS1      56.9    65   327  4.05  4.07  2.31
+## 4 0.290 Premium I     VS2      62.4    58   334  4.2   4.23  2.63
+## 5 0.31  Good    J     SI2      63.3    58   335  4.34  4.35  2.75
 ```
 
-## Including Plots
+```r
+diamonds %>% ggplot() +
+  geom_point(aes(carat, price), alpha = 0.01)
+```
 
-You can also embed plots, for example:
+![](rmarkdown_test1_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
-![](rmarkdown_test1_files/figure-html/pressure-1.png)<!-- -->
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
