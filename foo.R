@@ -1,0 +1,20 @@
+---
+#'title: "R Markdown test1"
+#'author: "Atoj"
+#'date: "18/10/2019"
+#'output: 
+  #' html_document: 
+  #' keep_md: yes
+---
+
+#+ r
+
+library(tidyverse)
+
+head(diamonds, 5)
+
+diamonds %>% ggplot() +
+  geom_point(aes(carat, price), alpha = 0.01)
+
+
+
